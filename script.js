@@ -1,5 +1,5 @@
 async function loadData() {
-    const url = 'ТВОЙ_УРЛ_СКРИПТА_APPS_SCRIPT';
+    const url = 'https://script.google.com/macros/s/AKfycbwS0WcaKhDpjFDWEC5YiijWU_GlKK-nEj_9UiRRncpe5DJHpHZY1DKmNE8lldXv-7LJ/exec';
     
     try {
         let response = await fetch(url);

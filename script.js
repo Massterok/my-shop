@@ -1,8 +1,18 @@
 async function loadData() {
-    const url = 'https://script.google.com/macros/s/AKfycbwS0WcaKhDpjFDWEC5YiijWU_GlKK-nEj_9UiRRncpe5DJHpHZY1DKmNE8lldXv-7LJ/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbzCmwO-jmBPzawRrc0U8aIWbGyMExSwYrxMauI9A6BcvNkcWsOlcUqGO59h4FzRBmEj/exec';
     
     try {
-        let response = await fetch(url);
+        let response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+
         let data = await response.json();
 
         let list = document.getElementById("product-list");
